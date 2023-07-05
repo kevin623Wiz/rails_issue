@@ -37,7 +37,11 @@
             <td><%= schedule.start.to_s(:datetime_jp2) %></td>
             <td><%= schedule.finish.to_s(:datetime_jp2) %></td>
             <td>
-              <%= schedule.allday %>
+              <% if schedule.allday == true %>
+                ○
+              <% else schedule.allday == false %>
+
+              <% end %>
             </td>
             <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
             <td>
