@@ -1,0 +1,52 @@
+<%= render "shared/partial-header" %> <%# ヘッダーのパーシャル %>
+
+<%# ファーストビューページ %>
+
+<div class = "top-text">
+ <h3>予定一覧</h3>
+ <p class = "new-button"><%= link_to "新規追加", :new_schedule %></p>
+</div>
+
+<% if flash[:success] %>
+ <p class = "success"><%= flash[:success] %></p>
+<% end %>
+<% if flash[:failure] %>
+ <p class = "failure"><%= flash[:failure] %></p>
+<% end %>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>更新日時</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @schedules.each do |schedule| %>
+         <tr>
+            <td><%= schedule.id %></td>
+            <td><%= schedule.title %></td>
+            <td><%= schedule.start.to_s(:datetime_jp2) %></td>
+            <td><%= schedule.finish.to_s(:datetime_jp2) %></td>
+            <td>
+              <%= schedule.allday %>
+            </td>
+            <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+            <td>
+              <%= link_to "詳細", schedule %>
+            </td>
+            <td>
+              <%= link_to "編集", [:edit, schedule] %>
+            </td>
+            <td>
+              <%= link_to "削除",schedule, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+            </td>
+         </tr>
+        <% end %>
+    </tbody>
+</table>
