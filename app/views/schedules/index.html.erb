@@ -53,3 +53,16 @@
         <% end %>
     </tbody>
 </table>
+
+<div class = "index-bottom-text">
+  <p>スケジュール合計 : <%= Schedule.count %>件</p>
+  <p>現在の日時 : <span id = "current_date"></span></p>
+</div>
+
+<script>
+  date = new Date();
+  year = date.getFullYear();
+  month = date.getMonth() +1;
+  day = date.getDate();
+  document.getElementById("current_date").innerHTML = year + "年" + month + "月" + day + "日";
+</script>
