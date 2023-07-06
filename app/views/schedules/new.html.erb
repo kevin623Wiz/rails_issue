@@ -1,0 +1,42 @@
+<%= render "shared/partial-header" %>
+
+<h3 class = "page-title">予定の新規追加</h3>
+
+<%= render "shared/error", obj: @schedule %> <!-- エラーメッセージ -->
+
+<%= form_with model: @schedule do |f| %>
+    <table>
+     <tr>
+      <th><%= f.label :title, "タイトル" %></th>
+      <td><%= f.text_field :title %></td>
+     </tr>
+
+     <tr>
+      <th><%= f.label :start, "開始日" %></th>
+      <td><%= f.date_field :start %></td>
+     </tr>
+
+     <tr>
+      <th><%= f.label :finish, "終了日" %></th>
+      <td><%= f.date_field :finish %></td>
+     </tr>
+
+     <tr>
+      <th><%= f.label :allday, "終日" %></th>
+      <td><%= f.check_box :allday, {} %></td>
+     </tr>
+
+     <tr>
+      <th><%= f.label :memo, "スケジュールメモ" %></th>
+      <td><%= f.text_area :memo %></td>
+     </tr>
+    </table>
+
+     <div>
+        <ul class = "new-button-list">
+          <li><%= f.submit "保存" %></li>
+          <li class = "back-button"><%= link_to "キャンセル", :schedules %></li>
+        </ul>
+     </div>
+<% end %>
+

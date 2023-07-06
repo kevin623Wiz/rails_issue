@@ -1,0 +1,72 @@
+<%= render "shared/partial-header" %> <%# ヘッダーのパーシャル %>
+
+<%# ファーストビューページ %>
+
+<div class = "top-text">
+ <h3>予定一覧</h3>
+ <p class = "new-button"><%= link_to "新規追加", :new_schedule %></p>
+</div>
+
+<% if flash[:success] %>
+ <p class = "success"><%= flash[:success] %></p>
+<% end %>
+<% if flash[:failure] %>
+ <p class = "failure"><%= flash[:failure] %></p>
+<% end %>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>タイトル</th>
+            <th>開始日</th>
+            <th>終了日</th>
+            <th>終日</th>
+            <th>更新日時</th>
+            <th>詳細</th>
+            <th>編集</th>
+            <th>削除</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @schedules.each do |schedule| %>
+         <tr>
+            <td><%= schedule.id %></td>
+            <td><%= schedule.title %></td>
+            <td><%= schedule.start.strftime("%Y/%m/%d") %></td>
+            <td><%= schedule.finish.strftime("%Y/%m/%d") %></td>
+            <td>
+              <% if schedule.allday == true %>
+                ○
+              <% else schedule.allday == false %>
+
+              <% end %>
+            </td>
+            <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+            <td>
+              <%= link_to "詳細", schedule %>
+            </td>
+            <td>
+              <%= link_to "編集", [:edit, schedule] %>
+            </td>
+            <td>
+              <%= link_to "削除",schedule, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+            </td>
+         </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div class = "index-bottom-text">
+  <p>スケジュール合計 : <%= Schedule.count %>件</p>
+  <p>現在の日時 : <span id = "current_date"></span></p>
+</div>
+
+<script>
+  date = new Date();
+  year = date.getFullYear();
+  month = date.getMonth() +1;
+  day = date.getDate();
+  document.getElementById("current_date").innerHTML = year + "年" + month + "月" + day + "日";
+</script>

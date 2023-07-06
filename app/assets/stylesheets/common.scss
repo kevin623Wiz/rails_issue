@@ -1,0 +1,119 @@
+header {
+    width: 100%;
+    background-color: #a8caf5;
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-title {
+    margin: 1rem 0 1rem;
+    text-align: center;
+}
+
+.top-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: 700;
+}
+
+.new-button a,
+.back-button a {
+    font-weight: 700;
+    background-color: blue;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color:#fff;
+}
+
+.new-button a:hover,
+.back-button a:hover {
+    background-color: lightblue;
+    color: #000;
+}
+
+table {
+    margin: 0 auto;
+   // width: 50%;
+}
+
+table th {
+    background-color: #fbc25b;
+    padding: 10px 20px;
+    max-width:100px
+}
+
+table td {
+    background-color: #f9ecd5;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+table th,
+table td {
+    padding: 10px 20px;
+}
+
+.notice {
+    background-color: #ccf;
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.new-button-list {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+li input {
+    width: 5rem;
+    padding: 0.75rem 0 0.75rem;
+}
+
+.back-link {
+    text-align: center;
+}
+
+.success {
+    background-color: #98ecaa;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.failure {
+    background-color: #88abcd;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.index-bottom-text {
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: #000 2px solid;
+    border-radius: 10px;
+    width: 75%;
+    background-color: #ccc;
+}
