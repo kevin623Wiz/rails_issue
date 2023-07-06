@@ -19,5 +19,6 @@ module Scheduleapp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Tokyo' #東京時間を追加
+    config.i18n.default_locale = :ja #デフォルト言語を日本語化
   end
 end

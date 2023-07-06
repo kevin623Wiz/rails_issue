@@ -23,6 +23,12 @@ a {
     margin: 0 auto;
 }
 
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: 700;
+}
+
 .new-button a,
 .back-button a {
     font-weight: 700;
@@ -87,6 +93,13 @@ li input {
 
 .success {
     background-color: #98ecaa;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.failure {
+    background-color: #88abcd;
     text-align: center;
     width: 100%;
     padding: 20px;
