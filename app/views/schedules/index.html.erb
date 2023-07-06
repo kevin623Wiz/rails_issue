@@ -34,8 +34,8 @@
          <tr>
             <td><%= schedule.id %></td>
             <td><%= schedule.title %></td>
-            <td><%= schedule.start.to_s(:datetime_jp2) %></td>
-            <td><%= schedule.finish.to_s(:datetime_jp2) %></td>
+            <td><%= schedule.start.strftime("%Y/%m/%d") %></td>
+            <td><%= schedule.finish.strftime("%Y/%m/%d") %></td>
             <td>
               <% if schedule.allday == true %>
                 ○

@@ -91,3 +91,16 @@ li input {
     width: 100%;
     padding: 20px;
 }
+
+.index-bottom-text {
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: #000 2px solid;
+    border-radius: 10px;
+    width: 75%;
+    background-color: #ccc;
+}
